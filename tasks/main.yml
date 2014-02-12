@@ -1,4 +1,4 @@
 ---
 - ec2_facts:
 - include: sethostname.yml forge_name="ip-{{ ansible_ec2_public_ipv4.replace('.','-') }}"
-  when: "ansible_ec2_public_ipv4 is defined"
+  when: ansible_ec2_public_ipv4 is defined
