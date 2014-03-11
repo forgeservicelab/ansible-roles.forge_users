@@ -12,6 +12,6 @@ https://support.forgeservicelab.fi/redmine/projects/forge-support/wiki/1_4_Regis
 
 ```
 roles:
-  - forge-hostname
+  - forge_hostname
 ```
 
