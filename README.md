@@ -1,17 +1,18 @@
-Role Name
-========
+# Forge Users
 
-Simple role which sets the proper hostname based on assigned floating IP. The name comes from a pool of pre-registered names in the hosts.forgeservicelab.fi domain.
+Role that creates users on a node, and downloads particular SSH key for the user.
 
-As described at
-
-https://support.forgeservicelab.fi/redmine/projects/forge-support/wiki/1_4_Registered_DNS_names
+It takes she ssh keys from this repo: `https://git.forgeservicelab.fi/forge/ssh_keys/`
 
 ## Usage
 
-
 ```
 roles:
-  - forge_hostname
+  - role: forge_users
+    forge_users_list:
+      - tkarasek
+      - jrodrigu
+      - khappone
+
 ```
 

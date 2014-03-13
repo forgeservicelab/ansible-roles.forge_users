@@ -1,4 +1,30 @@
 ---
-- ec2_facts:
-- include: sethostname.yml forge_name="ip-{{ ansible_ec2_public_ipv4.replace('.','-') }}"
-  when: ansible_ec2_public_ipv4 is defined
+- group:
+    name: wheel
+
+- lineinfile:
+    dest: /etc/sudoers
+    regexp: '^%wheel'
+    line: '%wheel   ALL=(ALL)   NOPASSWD: ALL'
+
+- user:
+    name: "{{ item }}"
+    groups: wheel
+  with_items: forge_users_list
+
+- file:
+    path: "/home/{{ item }}/.ssh"
+    state: directory
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: 0700
+  with_items: forge_users_list
+
+- get_url:
+    url: "https://git.forgeservicelab.fi/forge/ssh_keys/raw/master/{{ item }}?private_token={{ forge_users_private_token }}"
+    dest: "/home/{{ item }}/.ssh/authorized_keys"
+    force: yes
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: 0600
+  with_items: forge_users_list
