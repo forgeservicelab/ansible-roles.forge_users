@@ -1,4 +1,0 @@
-- set_fact:
-    ansible_hostname: "{{ forge_name }}"
-    ansible_fqdn: "{{ forge_name }}.hosts.forgeservicelab.fi"
-- hostname: name="{{ ansible_fqdn }}"
