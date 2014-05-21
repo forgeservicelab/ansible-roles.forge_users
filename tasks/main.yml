@@ -10,6 +10,7 @@
 
 - user:
     name: "{{ item }}"
+    shell: /bin/bash
     groups: wheel
   with_items: forge_users_list
 
