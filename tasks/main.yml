@@ -30,3 +30,7 @@
     group: "{{ item }}"
     mode: 0600
   with_items: forge_users_list
+
+- name: key check (if this fails, check your forge_users_private_token)
+  command: ssh-keygen -l -f "/home/{{ item }}/.ssh/authorized_keys"
+  with_items: forge_users_list
