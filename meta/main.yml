@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Tomas Karasek
-  description: A role setting hostname to pre-registered Forge FQDN based on its public IP
+  description: A role setting Forge users
   license: GPLv2
   min_ansible_version: 1.5
   platforms:
