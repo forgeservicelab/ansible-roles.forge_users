@@ -11,8 +11,8 @@ It takes she ssh keys from this repo: `https://git.forgeservicelab.fi/forge/ssh_
     - role: forge_users
       forge_users_private_token: "{{ gitlab_private_token }}"
       forge_users_list:
-        - jrodrigu
-        - ikoutone
+        - user1
+        - user2
 
 ```
 

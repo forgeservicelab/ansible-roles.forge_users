@@ -2,7 +2,8 @@
 galaxy_info:
   author: Tomas Karasek
   description: A role setting Forge users
-  license: GPLv2
+  company: DIGILE Ltd.
+  license: MIT
   min_ansible_version: 1.5
   platforms:
   - name: EL
